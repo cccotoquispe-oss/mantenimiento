@@ -1,0 +1,10 @@
+# Evita listado de directorios.
+Options -Indexes
+
+# Bloquea el acceso web directo a archivos de configuración y documentación interna.
+<FilesMatch "^(config\.php|config\.example\.php|LEEME_INSTALACION\.txt|SECURITY\.md)$">
+  Require all denied
+</FilesMatch>
+
+# Bloquea archivos y directorios internos de Git si por error se despliegan.
+RedirectMatch 404 ^/\.git(/|$)
